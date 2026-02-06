@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Install App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-1: #0b0b10;
+        --bg-2: #171724;
+        --card: rgba(255, 255, 255, 0.08);
+        --stroke: rgba(255, 255, 255, 0.16);
+        --text: #f2f4ff;
+        --muted: #c4c8de;
+        --accent: #5ef0b3;
+        --accent-2: #4aa3ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(800px 400px at 10% -10%, rgba(94, 240, 179, 0.25), transparent 60%),
+          radial-gradient(600px 300px at 100% 0%, rgba(74, 163, 255, 0.25), transparent 60%),
+          linear-gradient(160deg, var(--bg-1), var(--bg-2));
+        display: grid;
+        place-items: center;
+        padding: 24px 16px 48px;
+      }
+
+      .wrap {
+        width: min(680px, 100%);
+        text-align: center;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 20px;
+        padding: 28px 22px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(24px, 5vw, 32px);
+        letter-spacing: 0.2px;
+      }
+
+      p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: clamp(14px, 3.6vw, 16px);
+      }
+
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .tab {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--stroke);
+        color: var(--text);
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.06);
+        min-width: 140px;
+        transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+      }
+
+      .tab.primary {
+        border-color: rgba(94, 240, 179, 0.6);
+        background: linear-gradient(135deg, rgba(94, 240, 179, 0.18), rgba(74, 163, 255, 0.12));
+      }
+
+      .tab:active {
+        transform: scale(0.98);
+      }
+
+      .hint {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #aeb4d6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <h1>Install Battlegrounds</h1>
+        <p>Tap install on iPhone/iPad. If asked, go to Settings → VPN &amp; Device Management to trust the developer.</p>
+        <div class="tabs">
+          <a
+            class="tab primary"
+            href="itms-services://?action=download-manifest&url=REPLACE_WITH_GITHUB_PAGES_URL/manifest.plist"
+          >
+            Install
+          </a>
+          <a class="tab" href="#help">Help</a>
+        </div>
+        <div class="hint" id="help">
+          Make sure your device is online and the install link opens in Safari.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
